@@ -90,5 +90,5 @@ food_feed_availability %>%
 write.csv(x = food,
           file = "food.csv")
 
-write.csv(x = "feed",
+write.csv(x = feed,
           file = "feed.csv")
