@@ -12,4 +12,9 @@ Both our food availability and population data are sorted by country and, more i
 
 ## Analytical Objectives
 
-None yet. We'll add a few modeling exercises in the near future.
+### Exploratory: Food & Beverage Availability in South America
+
+### Predictive: Next-year Availability Estimation with Exponential Smoothing
+
+1. Create a spread across values of alpha
+2. Minimize estimation MSE across all countries
