@@ -88,7 +88,9 @@ food_feed_availability %>%
   select(-one_of("Element")) -> feed
 
 write.csv(x = food,
-          file = "food.csv")
+          file = "food.csv",
+          row.names = F)
 
 write.csv(x = feed,
-          file = "feed.csv")
+          file = "feed.csv",
+          row.names = F)
