@@ -24,3 +24,4 @@ We shall utilize a smaller subset of item types, using summaries of staple food 
 2. Gather all yearly value columns (Y1961 through Y2013) into rows with a column Year containing the corresponding C.E. year (1961:2013).
 3. Use select to remove redundant information such as item & area codes
 4. Spread these rows by Item into columns bearing the aforementioned names using those stored values.
+5. Export the results, based on Element, to food.csv and feed.csv.
