@@ -1,0 +1,31 @@
+---
+title: "Demo - Exponential Smoothing & Colombian Coffee"
+author: "Adam L. Seale"
+date: "May 9, 2018"
+output: pdf_document
+---
+
+```{r echo=F, message=F, error=F, warning=F}
+setwd("../")
+invisible(library(dplyr))
+library(forecast)
+invisible(source("load_combined_data.R"))
+```
+
+As an example of basic time-series smoothing and forecasting, let's create a double exponential smoothing model for the amount of consumer-available coffee in Colombia. We'll specify our model as AAN: additive error, additive trend, and no cyclical factors - then visualize it as follows:
+
+```{r}
+colombian_data <- food_per_capita %>% filter(Area == "Colombia")
+coffee <- colombian_data$Coffee
+model <- ets(coffee, "AAN")
+plot(predict(model),
+     main = "Coffee Availability Forecast - 80% and 95% Likeliood Ranges",
+     xlab = "Years since 1960",
+     ylab = "Relative Available Amount")
+```
+
+A reasonable interpretation of this graph might be:
+
+"It is 80% likely that the amount of available coffee in Colombia in 2014 - knowing only values prior to that - will not increase or decrease by more than about half its present value."
+
+This admittedly isn't an *enormously* valuable insight; however, I do hope it serves to demonstrate proficiency.
