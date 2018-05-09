@@ -21,6 +21,9 @@ library(tidyr)
     gather(key = "Year",
            value = "Population",
            ... = cols_to_gather) %>%
+    # Explicitly typecast columns
+    mutate(Year = as.integer(Year),
+           Population = as.integer(Population)) %>%
     # Specify desired columns
     select("Country Code", "Year", "Population")
 })() -> world_pop
